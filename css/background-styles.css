@@ -1,0 +1,126 @@
+/* Background images for slides and sections */
+.slide.active[data-bg="1"], 
+.slide[data-bg="1"] {
+    background-image: url('../images/Satech-1.png');
+    background-size: cover; /* Changed from 100% 100% */
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.slide[data-bg="2"] {
+    background-image: url('../images/Satech-2.png');
+    background-size: cover; /* Changed from 100% 100% */
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.slide[data-bg="4"] {
+    background-image: url('../images/Satech-4.png');
+    background-size: cover; /* Changed from 100% 100% */
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.slide[data-bg="6"] {
+    background-image: url('../images/Satech-6.png');
+    background-size: cover; /* Changed from 100% 100% */
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* Background images for section backgrounds */
+.bg-image[data-section="about"] {
+    background-image: url('../images/Satech-2.png');
+    background-size: cover; /* Changed from 100% 100% */
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.bg-image[data-section="processes"] {
+    background-image: url('../images/Satech-3.png');
+    background-size: cover; /* Changed from 100% 100% */
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.bg-image[data-section="mepi"] {
+    background-image: url('../images/Satech-4.png');
+    background-size: cover; /* Changed from 100% 100% */
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.bg-image[data-section="solutions"] {
+    background-image: url('../images/Satech-5.png');
+    background-size: cover; /* Changed from 100% 100% */
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.bg-image[data-section="commitment"] {
+    background-image: url('../images/Satech-6.png');
+    background-size: cover; /* Changed from 100% 100% */
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.bg-image[data-section="contactvv"] {
+    background-image: url('../images/Satech-7.png');
+    background-size: cover; /* Changed from 100% 100% */
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.bg-image[data-section="contact"] {
+    background-image: url('../images/Satech-8.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* Language-specific contact section backgrounds */
+html[lang="es"] .bg-image[data-section="contact"] {
+    background-image: url('../images/Satech-7.png');
+}
+
+html[lang="en"] .bg-image[data-section="contact"] {
+    background-image: url('../images/Satech-8.png');
+}
+
+/* Honeypot field for forms */
+.honeypot-field {
+    display: none;
+}
+
+/* Floating particles */
+.floating-particle.p1 {
+    top: 20%;
+    left: 10%;
+    width: 30px;
+    height: 30px;
+}
+
+.floating-particle.p2 {
+    top: 70%;
+    left: 80%;
+    width: 20px;
+    height: 20px;
+}
+
+.floating-particle.p3 {
+    top: 40%;
+    left: 65%;
+    width: 15px;
+    height: 15px;
+}
+
+/* Thank you page background */
+.thank-you-bg {
+    min-height: calc(100vh - 50px);
+    margin-top: 50px;
+}
+
+.thank-you-bg .section-background-image {
+    opacity: 1;
+}
+

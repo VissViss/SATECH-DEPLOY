@@ -1,0 +1,155 @@
+# Netlify configuration file
+# Learn more at: https://docs.netlify.com/configure-builds/file-based-configuration/
+
+# Global build settings
+[build]
+  publish = "/"  # Root of the upload directory
+  command = ""  # No build command is needed for a static HTML site
+
+# Environment variables  
+[build.environment]
+  NODE_VERSION = "18"
+
+# Production context: all deploys from the main branch 
+# will inherit these settings
+[context.production]
+  [context.production.environment]
+    NETLIFY_USE_YARN = "false"
+
+# Deploy Preview context: all deploys generated from a pull/merge request
+# will inherit these settings
+[context.deploy-preview]
+  [context.deploy-preview.environment]
+    NETLIFY_USE_YARN = "false"
+
+# Branch Deploy context: all deploys that are not from a pull/merge request
+# or from the production branch will inherit these settings
+[context.branch-deploy]
+  [context.branch-deploy.environment]
+    NETLIFY_USE_YARN = "false"
+
+# Specific branch context: all deploys from this specific branch will inherit
+# these settings
+[context.staging] # 'staging' is a branch name
+  [context.staging.environment]
+    NODE_ENV = "development"
+
+# Asset optimization
+[build.processing]
+  skip_processing = false
+  
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
+
+[build.processing.images]
+  compress = true
+
+# Headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.googleapis.com https://fonts.gstatic.com https://maps.app.goo.gl; img-src 'self' data: https://raw.githubusercontent.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; connect-src 'self'; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; form-action 'self';"
+
+# Cache long-lived assets
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# HTML files should have a shorter cache
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Custom redirects
+[[redirects]]
+  from = "https://www.satech.co/*"
+  to = "https://satech.co/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.satech.co/*"
+  to = "https://satech.co/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://satech.co/*"
+  to = "https://satech.co/:splat"
+  status = 301
+  force = true
+
+# Language-based redirects
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+  conditions = {Language = ["es"]}
+
+[[redirects]]
+  from = "/"
+  to = "/english.html"
+  status = 200
+  conditions = {Language = ["en-*"]}
+
+# Thank you page redirects
+[[redirects]]
+  from = "/gracias"
+  to = "/gracias.html"
+  status = 200
+
+[[redirects]]
+  from = "/thanks"
+  to = "/thanks.html"
+  status = 200
+
+# External redirects (social media)
+[[redirects]]
+  from = "/whatsapp"
+  to = "https://wa.me/573153977544"
+  status = 302
+
+[[redirects]]
+  from = "/instagram"
+  to = "https://www.instagram.com/satech.co"
+  status = 302
+
+[[redirects]]
+  from = "/linkedin"
+  to = "https://www.linkedin.com/company/satech-s-a-s-/"
+  status = 302
+
+[[redirects]]
+  from = "/email"
+  to = "mailto:info@satech.co"
+  status = 302
+
+# Default 404 handling
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404

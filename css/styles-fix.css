@@ -1,0 +1,105 @@
+@media (max-width: 768px) {
+    /* Hamburger menu item spacing reduction */
+    nav ul li {
+        margin: 0;
+        width: 100%;
+        height: auto;
+        padding: 0;
+    }
+    
+    nav ul li a {
+        font-size: 0.95rem;
+        width: 100%;
+        padding: 6px 0;
+        display: block;
+        line-height: 1.2;
+    }
+    
+    /* Language dropdown mobile fix - Enhanced version */
+    .dropdown {
+        position: relative;
+        height: auto;
+        width: 100%;
+    }
+    
+    .dropdown > a {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 6px 0;
+        position: relative;
+    }
+    
+    .dropdown > a::after {
+        content: "▼";
+        font-size: 0.6rem;
+        margin-left: 5px;
+        position: absolute;
+        right: 10px;
+        transition: transform 0.3s;
+    }
+    
+    .dropdown.active > a::after {
+        transform: rotate(180deg);
+    }
+    
+    .dropdown-content {
+        position: static;
+        display: none;
+        width: 100%;
+        margin-top: 5px;
+        background-color: rgba(60, 60, 60, 0.5);
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+    
+    .dropdown-content a {
+        padding: 8px 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Footer spacing fix */
+    .footer-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        gap: 5px;
+    }
+    
+    footer p {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        line-height: 50px;
+    }
+    
+    footer .social-links {
+        margin-left: 5px;
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        height: 50px;
+    }
+    
+    footer .social-links a {
+        margin: 0 5px;
+        font-size: 1rem;
+    }
+}
+
+/* Honeypot field - invisible to humans but still accessible to bots */
+.honeypot-field {
+    display: none !important;
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}

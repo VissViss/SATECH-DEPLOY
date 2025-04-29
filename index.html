@@ -1,0 +1,512 @@
+<!-- Hidden form for Netlify bot to detect -->
+<form name="contact" netlify netlify-honeypot="bot-field" hidden>
+  <input type="text" name="name" />
+  <input type="email" name="email" />
+  <input type="tel" name="phone" />
+  <select name="reason"></select>
+  <textarea name="message"></textarea>
+</form>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    
+    <!-- Preconnect to external domains to improve performance -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Preload background images for faster transitions -->
+    <link rel="preload" href="images/Satech-1.png" as="image">
+    <link rel="preload" href="images/Satech-2.png" as="image">
+    <link rel="preload" href="images/Satech-3.png" as="image">
+    <link rel="preload" href="images/Satech-4.png" as="image">
+    <link rel="preload" href="images/Satech-5.png" as="image">
+    <link rel="preload" href="images/Satech-6.png" as="image">
+    <link rel="preload" href="images/Satech-7.png" as="image">
+    <link rel="preload" href="images/Satech-8.png" as="image">
+    <link rel="preload" href="images/Satech-9.png" as="image">
+    
+    <!-- SEO metadata and other header content -->
+    <meta name="description" content="SATECH S.A.S. es una empresa de tecnología e innovación, centrada en fabricación de dispositivos electrónicos inteligentes, dispositivos de virtualización, dispositivos de seguridad informática, servidores, redes y desarrollo de software. Nuestro objetivo es el mejoramiento de la tecnología.">
+    
+    <meta name="author" content="SATECH S.A.S.">
+    
+    <!-- SEO -->
+    <title>SATECH S.A.S.® | satech.co</title>
+    <meta name="description" content="Satech, con sede en Colombia, desarrolla proyectos sostenibles con estrategias enfocadas en transformar residuos en recursos renovables utilizando tecnologías como pirólisis y gasificación. También ofrecemos soluciones agroindustriales con biotecnología, generando biocarbón, biocombustibles y energía limpia. Nuestro compromiso con la sostenibilidad se refleja en la aplicación de tecnologías innovadoras y soluciones ambientales para producir recursos renovables y desarrollar proyectos agroindustriales. Con un equipo de profesionales altamente calificados en tecnologías biológicas, bioquímicas y científicas, buscamos maximizar el impacto positivo en el planeta y generar rendimiento financiero para nuestros inversores y socios estratégicos. Contacto: info@satech.co." />
+    
+    <link rel="canonical" href="https://www.satech.co/" />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Desarrollo Estratégico e Implementación de Proyectos Sustentables"/>
+    <meta property="og:description" content="Transformando biomasa en recursos renovables como biocarbón, biocombustibles y energía limpia." />
+    
+    <meta property="og:url" content="https://www.satech.co/" />
+    <meta property="og:site_name" content="SATECH S.A.S.®" />
+    <meta property="article:publisher" content="https://www.facebook.com/satech/" />
+    
+    <meta property="og:image" content="https://satech.co/images/thumbnail.jpg" />
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Satech S.A.S.">
+    <meta name="twitter:image:src" content="https://satech.co/images/thumbnail.jpg">
+    <meta name="twitter:description" content="Transformando biomasa en recursos renovables como biocarbón, biocombustibles y energía limpia">
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/background-styles.css">
+    <link rel="stylesheet" href="css/styles-fix.css"> <!-- Added separate CSS fixes file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Inline mobile menu styles (added for hamburger menu fix) -->
+    <style>
+        @media (max-width: 768px) {
+            .hamburger span {
+                transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            }
+            
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(6px, 6px);
+            }
+            
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(6px, -6px);
+            }
+            
+            nav {
+                transition: right 0.3s ease-in-out;
+            }
+        }
+    </style>
+</head>
+<body>
+	
+
+       
+    <!-- Header and Navigation -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="https://www.satech.co"><img src="images/Satech-logo-C-L-2.png" alt="SATECH Logo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">Sobre Nosotros</a></li>
+                    <li><a href="#sustentabilidad">Sustentabilidad</a></li>
+                    <li><a href="#processes">Procesos</a></li>
+                    <li><a href="#mepi">MEPI</a></li>
+                    <li><a href="#solutions">Soluciones</a></li>
+                    <li><a href="#commitment">Compromiso</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                    <li class="dropdown">
+                        <a href="index.html"><img src="images/colombia-flag.png" alt="Colombia Flag"></a>
+                        <div class="dropdown-content">
+                            <a href="index.html"><img src="images/colombia-flag.png" alt="Colombia Flag"> ES</a>
+                            <a href="english.html"><img src="images/canada-flag.png" alt="Canada Flag"> EN</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Hero Section (Swiper.js Implementation) -->
+    <section id="home" class="hero">
+      <!-- Swiper Hero Carousel -->
+      <div class="swiper hero-swiper">
+        <div class="swiper-wrapper">
+
+          <!-- Slide 1 - Main Hero -->
+          <div class="swiper-slide">
+            <div class="Pic">
+              <img src="images/Satech-1.png" alt="SATECH Slide 1" />
+            </div>
+            <div class="h1p">
+              DESARROLLO ESTRATÉGICO E IMPLEMENTACIÓN DE PROYECTOS SUSTENTABLES
+            </div>
+          </div>
+          
+          <!-- Slide 2 - Biomass Transformation -->
+          <div class="swiper-slide">
+            <div class="Pic">
+              <img src="images/Satech-2.png" alt="SATECH Slide 2" />
+            </div>
+            <div class="h1p">
+              TRANSFORMACIÓN DE BIOMASA EN RECURSOS RENOVABLES
+            </div>
+          </div>
+          
+          <!-- Slide 3 - Sustainable Innovation -->
+          <div class="swiper-slide">
+            <div class="Pic">
+              <img src="images/Satech-4.png" alt="SATECH Slide 3" />
+            </div>
+            <div class="h1p">
+              INNOVACIONES PARA UN FUTURO SUSTENTABLE
+            </div>
+          </div>
+          
+          <!-- Slide 4 - Environmental Solutions -->
+          <div class="swiper-slide">
+            <div class="Pic">
+              <img src="images/Satech-6.png" alt="SATECH Slide 4" />
+            </div>
+            <div class="h1p">
+              SOLUCIONES AMBIENTALES Y TECNOLÓGICAS
+            </div>
+          </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Navigation -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </section>
+
+    <!-- Background Images for Parallax Effect -->
+<div class="bg-container">
+    <div class="bg-image" data-section="about"></div>
+    <div class="bg-image" data-section="processes"></div>
+    <div class="bg-image" data-section="mepi"></div>
+    <div class="bg-image" data-section="solutions"></div>
+    <div class="bg-image" data-section="commitment"></div>
+    <div class="bg-image" data-section="contact"></div>
+</div>
+
+
+<!-- About Section (modified structure) -->
+<section id="about" class="section-card">
+    <div class="section-content">
+        <div class="section-content-view gsap-content card-center"> <!-- Added gsap-content class -->
+            <div class="content-container">
+                <!-- Existing content remains -->
+                <h3>SOBRE SATECH<span class="title-decoration"></span></h3>
+                <p>Satech, con sede en Rionegro, Colombia, desarrolla proyectos sustentables con estrategias centradas en la transformación de subproductos en recursos renovables, mediante tecnologías como pirólisis y gasificación. Además, ofrecemos soluciones agroindustriales con biotecnología, generando biocarbón, biocombustibles y energía limpia. Nuestra contribución a la economía circular y la reducción de emisiones, crea valor agregado significativo para nuestros clientes.</p>
+                <div id="sustentabilidad">
+                    <h3>SUSTENTABILIDAD<span class="title-decoration"></span></h3>
+                    <p>Nuestro compromiso con la sustentabilidad se refleja en la aplicación de tecnologías innovadoras y soluciones ambientales para producir recursos renovables y desarrollar proyectos agroindustriales. Con un equipo de profesionales altamente calificado en tecnologías biológicas, bioquímicas y científicas, buscamos maximizar el impacto positivo en el planeta y generar rendimiento financiero para nuestros inversionistas y socios estratégicos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Processes Section (modified structure) -->
+<section id="processes" class="section-card">
+    <div class="section-content">
+        <div class="section-content-view gsap-content card-center"> <!-- Added gsap-content class -->
+            <div class="content-container">
+                <!-- Existing content remains -->
+                <h3>Procesos que Satech utiliza para transformar subproductos y biomasa en productos sustentables<span class="title-decoration"></span></h3>
+                <ul class="compact-list">
+                    <li> Pirólisis</li>
+                    <li> Gasificación</li>
+                    <li> Biorremediación; recuperación de aguas y suelo</li>
+                    <li> Compostaje</li>
+                    <li> De residuos a Hidrógeno</li>
+                    <li> De residuos a Combustible de Aviación Sustentable (SAF)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+
+   <!-- MEPI Section (modified structure) -->
+   <section id="mepi" class="section-card">
+    <div class="section-content">
+        <div class="section-content-view gsap-content card-center">
+            <div class="content-container">
+                <!-- Existing content remains -->
+                <h3 class="text-center">MEPI<span class="title-decoration"></span></h3>
+                <p>Frente a la creciente crisis de residuos, el Micro Eco-Parque Industrial (MEPI) propone una solución sostenible. La desviación de residuos de vertederos no controlados reduce significativamente las emisiones de gases de efecto invernadero, apoyando las Contribuciones Nacionales Determinadas (NDC) en la lucha contra el cambio climático.</p>
+                <p>La producción de biocarbón, biocombustibles renovables y electricidad dentro de nuestro proyecto MEPI, aportan valor agregado: el biocarbón, mejorando la fertilidad del suelo, secuestrando carbono, y disminuyendo así la dependencia de combustibles fósiles.</p>
+                <p>Nuestra dedicación a la economía circular se refleja en la re-utilización de residuos y el uso eficiente de recursos, factores clave para el desarrollo económico local y la creación de oportunidades en comunidades rurales.</p>
+                <h3>Ventajas<span class="title-decoration"></span></h3>
+                <ul class="compact-list">
+                    <li>Minimización de vertederos</li>
+                    <li>Reducción de emisiones</li>
+                    <li>Bonos de carbón</li>
+                    <li>Producción de fertilizantes (biocarbón)</li>
+                </ul>
+                <h3 class="text-center">Impactos Económicos<span class="title-decoration"></span></h3>
+                <ul class="compact-list">
+                    <li>Reducción de costos energéticos</li>
+                    <li>Venta de bonos de Carbón</li>
+                    <li>Aprovechamientos rentables</li>
+                </ul>  
+            </div>
+        </div>
+    </div>
+</section> 
+
+    
+
+<!-- Solutions Section (modified structure) -->
+<section id="solutions" class="section-card">
+    <div class="section-content">
+        <div class="section-content-view gsap-content card-center"> <!-- Added gsap-content class -->
+            <div class="content-container">
+                <!-- Existing content remains -->
+                <h3>Soluciones Sustentables con Empresas Asociadas<span class="title-decoration"></span></h3>
+                <h4 class="text-center">Asociación con empresas internacionales para el desarrollo de productos y procesos innovadores</h4>
+                <ul class="compact-list">
+                    <li> Tecnología de Pirólisis</li>
+                    <li> PG Plant</li>
+                    <li> Siemens Energy</li>
+                    <li> Velocys</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Commitment Section (modified structure) -->
+<section id="commitment" class="section-card">
+    <div class="section-content">
+        <div class="section-content-view gsap-content card-center">
+            <div class="content-container">
+                <!-- Existing content remains -->
+                <h3>Nuestro Compromiso con el Desarrollo Sostenible se Traduce en:<span class="title-decoration"></span></h3>
+                <p>1. De Basura a Bienestar: Aprovechamiento de residuos para mejorar la calidad de vida y el desarrollo local.</p>
+                <p>2. Producción de Energía Renovable: A partir de Fuentes No Convencionales (FNCER).</p>
+                <p>3. Desarrollo de Red de MEPI: Proyectos de economía circular con generación de energía distribuida y alta rentabilidad.</p>
+                <p>4. Oportunidades de Co-inversión: Para impulsar la expansión de la red MEPI.</p>
+                <h3 class="text-center">Nuestra Visión: 50 MEPIs en Antioquia para 2030. Te invitamos a construir un futuro sostenible para transformar juntos nuestra región.<span class="title-decoration"></span></h3>
+                <h3>¡PARTICIPA!<span class="title-decoration"></span></h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Contact Section (modified structure) -->
+<section id="contact" class="section-card">
+    <div class="section-content">
+        <div class="section-content-view gsap-content card-center">
+            <div class="content-container">
+                <!-- Existing content remains -->
+                <h3>CONTACTO<span class="title-decoration"></span></h3>
+                <div class="contact-content">
+                  <div class="contact-row">
+                    <div class="contact-logo">
+                      <a href="https://www.satech.co"><img src="images/Satech-logo-C-L-1.png" alt="SATECH Logo"></a>
+                    </div>
+                    <div class="contact-info">
+                      <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p><a href="mailto:info@satech.co" target="_blank" rel="nofollow noopener noreferrer" title="Enviar correo">info@satech.co</a></p>
+                      </div>
+                      <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p><a href="https://wa.me/573153977544" target="_blank" rel="nofollow noopener noreferrer" title="Contactar por WhatsApp">+57 315 397 7544</a></p>
+                      </div>
+                      <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p><a href="https://maps.app.goo.gl/LQDJFsPFKsALRdfEA" target="_blank" rel="nofollow noopener noreferrer" title="Ver ubicación en Google Maps">Calle 51 # 50-54, Rionegro, Colombia</a></p>
+                      </div>
+                    </div>
+                  </div>
+                  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form" action="gracias.html">
+                    <input type="hidden" name="form-name" value="contact">
+                    <input type="hidden" name="subject" value="Mensaje desde sitio web - Deploy ID: 20250429">
+                    <input type="hidden" name="to" value="info@satech.co">
+                    <input type="hidden" name="timestamp" value="deploy-refresh-20250429">
+                    <div class="honeypot-field">
+                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group">
+                          <label for="name">Nombre <span class="required">*</span></label>
+                          <input type="text" name="name" id="name" placeholder="Tu nombre completo" required>
+                      </div>
+                      <div class="form-group">
+                          <label for="email">Email <span class="required">*</span></label>
+                          <input type="email" name="email" id="email" placeholder="ejemplo@correo.com" required>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group">
+                          <label for="phone">Teléfono</label>
+                          <input type="tel" name="phone" id="phone" placeholder="+57 300 000 0000">
+                      </div>
+                      <div class="form-group">
+                          <label for="reason">Asunto <span class="required">*</span></label>
+                          <select name="reason" id="reason" required>
+                              <option value="" disabled selected>Selecciona un asunto</option>
+                              <option value="Información general">Información general</option>
+                              <option value="Cotización">Cotización</option>
+                              <option value="Soporte técnico">Soporte técnico</option>
+                              <option value="Otro">Otro</option>
+                          </select>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje <span class="required">*</span></label>
+                        <textarea name="message" id="message" placeholder="Escribe tu mensaje aquí" required></textarea>
+                    </div>
+                    <p class="form-note"><span class="required">*</span> Campos obligatorios</p>
+                    <button type="submit" class="btn">Enviar mensaje</button>
+                </form>
+                </div>  
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+    <!-- Floating Social Links -->
+    <div class="floating-social">
+        <a href="https://wa.me/573153977544" target="_blank" rel="nofollow noopener noreferrer" title="Contactar por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:info@satech.co" target="_blank" rel="nofollow noopener noreferrer" title="Enviar correo"><i class="far fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/company/satech-s-a-s-/" target="_blank" rel="nofollow noopener noreferrer" title="Visitar LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/satech.co" target="_blank" rel="nofollow noopener noreferrer" title="Visitar Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" id="back-to-top" class="back-to-top" title="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <!-- <a href="https://www.satech.co"><img src="images/Satech-logo-C-L-2.png" alt="SATECH Logo"></a> -->
+                </div>
+                <p>&copy; 2025 SATECH S.A.S.</p>
+                <div class="social-links">
+                    <a href="https://wa.me/573153977544" target="_blank" rel="nofollow noopener noreferrer" title="Contactar por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="mailto:info@satech.co" target="_blank" rel="nofollow noopener noreferrer" title="Enviar correo"><i class="far fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/company/satech-s-a-s-/" target="_blank" rel="nofollow noopener noreferrer" title="Visitar LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/satech.co" target="_blank" rel="nofollow noopener noreferrer" title="Visitar Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Load GSAP Libraries with fallback -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollToPlugin.min.js" defer></script>
+    
+   
+        <!-- Swiper JS - Load before other scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- JavaScript Files -->
+    <script src="js/script.js" defer></script>
+    <script src="js/animations.js" defer></script>
+
+    
+
+    <!-- Floating Elements (keep these minimal to avoid clutter) -->
+    <div class="floating-particle p1"></div>
+    <div class="floating-particle p2"></div>
+    <div class="floating-particle p3"></div>
+
+    <!-- Mobile Menu Script - Standalone solution -->
+    <script>
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get mobile menu elements
+            const hamburger = document.querySelector('.hamburger');
+            const nav = document.querySelector('nav');
+            const dropdown = document.querySelector('.dropdown'); // Get language dropdown
+            
+            // Only add these event listeners if elements exist
+            if (hamburger && nav) {
+                // Toggle menu when hamburger is clicked
+                hamburger.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation(); // Prevent event from bubbling up
+                    this.classList.toggle('active');
+                    nav.classList.toggle('active');
+                });
+                
+                // Close menu when clicking anywhere else on the page
+                document.addEventListener('click', function(e) {
+                    if (nav.classList.contains('active') && 
+                        !nav.contains(e.target) && 
+                        !hamburger.contains(e.target)) {
+                        hamburger.classList.remove('active');
+                        nav.classList.remove('active');
+                    }
+                });
+                
+                // Close menu when a nav link is clicked (except language dropdown)
+                const navLinks = document.querySelectorAll('nav a:not(.dropdown a):not(.dropdown > a)');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        hamburger.classList.remove('active');
+                        nav.classList.remove('active');
+                    });
+                });
+                
+                // Toggle language dropdown on mobile
+                if (dropdown) {
+                    // Separate click handler specifically for the dropdown toggle
+                    const dropdownToggle = dropdown.querySelector('a'); // The first a element (the toggle)
+                    
+                    if (dropdownToggle) {
+                        dropdownToggle.addEventListener('click', function(e) {
+                            // Only act on mobile
+                            if (window.innerWidth <= 768) {
+                                e.preventDefault(); // Prevent navigation
+                                e.stopPropagation(); // Prevent closing the menu
+                                dropdown.classList.toggle('active');
+                            }
+                        });
+                    }
+                    
+                    // Allow clicking inside dropdown content without closing menu
+                    const dropdownContent = dropdown.querySelector('.dropdown-content');
+                    if (dropdownContent) {
+                        dropdownContent.addEventListener('click', function(e) {
+                            // Don't stop propagation for actual language links - allow them to navigate
+                            e.stopPropagation(); // But prevent the click from closing the menu
+                        });
+                    }
+                }
+            }
+        });
+    </script>
+
+<!-- CSS Diagnostic Tool (development only) -->
+<!-- <script src="js/dev-tools/css-diagnostic.js"></script> -->
+
+
+</body>
+</html>

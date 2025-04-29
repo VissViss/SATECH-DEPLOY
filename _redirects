@@ -1,0 +1,20 @@
+# Redirect domain aliases to primary domain
+https://www.satech.co/* https://satech.co/:splat 301!
+http://www.satech.co/* https://satech.co/:splat 301!
+http://satech.co/* https://satech.co/:splat 301!
+
+# Language-based redirects
+/   /index.html   200   Language=es
+/   /english.html   200   Language=en-*
+
+# Thank you page redirects
+/gracias /gracias.html 200
+/thanks /thanks.html 200
+
+# External redirects (social media)
+/whatsapp https://wa.me/573153977544 302
+/instagram https://www.instagram.com/satech.co 302
+/linkedin https://www.linkedin.com/company/satech-s-a-s-/ 302
+
+# Default 404 handling
+/* /404.html 404
