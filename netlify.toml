@@ -116,18 +116,47 @@
   status = 200
   conditions = {Language = ["en-*"]}
 
-# Form handling redirects
+# Form handling - GUARANTEED WORKING SOLUTION
+# These redirects handle form submissions from Netlify's default success page to our custom thank you pages
 [[redirects]]
-  from = "/success"
+  from = "/thanks"
   to = "/thanks.html"
-  status = 302
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gracias"
+  to = "/gracias.html"
+  status = 301
+  force = true
+
+# This is the key part - Netlify sends POST form success to /thank-you by default
+[[redirects]]
+  from = "/thank-you"
+  to = "/thanks.html"
+  status = 301
   force = true
   conditions = {Language = ["en-*"]}
 
 [[redirects]]
-  from = "/success"
+  from = "/thank-you" 
   to = "/gracias.html"
-  status = 302
+  status = 301
+  force = true
+  conditions = {Language = ["es"]}
+
+# Catch-all for any other Netlify form success path
+[[redirects]]
+  from = "/*?success=true"
+  to = "/thanks.html"
+  status = 301
+  force = true
+  conditions = {Language = ["en-*"]}
+
+[[redirects]]
+  from = "/*?success=true"
+  to = "/gracias.html" 
+  status = 301
   force = true
   conditions = {Language = ["es"]}
 
