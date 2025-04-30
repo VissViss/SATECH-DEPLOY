@@ -48,6 +48,46 @@
         padding: 0; /* Removed any potential padding */
     }
     
+    /* RESPONSIVE IMAGES: Reduce image sizes for mobile devices */
+    img {
+        max-width: 100%; /* Ensure images don't overflow their containers */
+        height: auto; /* Maintain aspect ratio */
+    }
+    
+    /* Specific image size reductions */
+    .logo img {
+        height: 30px; /* Smaller logo for mobile */
+    }
+    
+    .contact-logo img {
+        height: 60px; /* Smaller contact logo for mobile */
+        max-width: 80%; /* Limit width to 80% of container */
+    }
+    
+    .thank-you-logo img, 
+    .notfound-container .thank-you-logo img {
+        height: 50px; /* Smaller thank you page logo */
+    }
+    
+    /* Background images and section cards */
+    .section-background-image {
+        background-size: cover !important; /* Force cover instead of 100% */
+    }
+    
+    /* Content containers with images */
+    .content-container img {
+        max-width: 90%; /* Slightly narrower than container */
+        margin: 0 auto; /* Center images */
+        display: block; /* Ensure block display for margin auto */
+    }
+    
+    /* Dropdown flags */
+    .dropdown img, 
+    .dropdown-content a img {
+        height: 16px; /* Smaller flag icons */
+        width: auto;
+    }
+    
     /* Hamburger menu item spacing reduction */
     nav ul li {
         margin: 0;
