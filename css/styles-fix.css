@@ -38,6 +38,15 @@
         right: 0;
     }
     
+    /* CRITICAL FIX: Make nav ul a column layout */
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        align-items: flex-start;
+        margin-top: 20px;
+    }
+    
     /* Hamburger menu item spacing reduction */
     nav ul li {
         margin: 0;
