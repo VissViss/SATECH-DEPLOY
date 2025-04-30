@@ -328,7 +328,7 @@
                       </div>
                     </div>
                   </div>
-                  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form" action="/thanks.html" netlify>
+                  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form" action="/thanks.html" netlify onsubmit="event.preventDefault(); const form=this; const formData=new FormData(form); const isEnglish=window.location.pathname.includes('english'); const thankYouPage=isEnglish ? '/thanks.html' : '/gracias.html'; fetch('/', {method: 'POST', body: new URLSearchParams(formData).toString()}).then(() => window.location.href = thankYouPage).catch(error => alert('Form submission error')); return false;">
                     <input type="hidden" name="form-name" value="contact">
                     <input type="hidden" name="subject" value="Message from website">
                     <input type="hidden" name="to" value="info@satech.co">
