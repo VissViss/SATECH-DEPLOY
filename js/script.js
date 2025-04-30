@@ -559,10 +559,11 @@ document.addEventListener('DOMContentLoaded', function() {
       // Get form data
       const formData = new FormData(this);
       
-      // Submit the form data using fetch
+      // Submit the form data using fetch - FIXED to match BlackboxAI recommendation exactly
       fetch('/', {
         method: 'POST',
-        body: formData
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
       })
       .then(response => {
         if (response.ok) {
