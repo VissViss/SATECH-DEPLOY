@@ -548,11 +548,18 @@ function initContentAnimations() {
 }
 
 // Form submission handler with custom redirect
-function handleFormSubmit(event, language) {
+function handleFormSubmit(event) {
   event.preventDefault();
+  console.log("Form submission intercepted");
   
   const form = event.target;
   const formData = new FormData(form);
+  
+  // Determine which language/thank you page to use based on the current page
+  const isEnglish = window.location.pathname.includes('english');
+  const thankYouPage = isEnglish ? "/thanks.html" : "/gracias.html";
+  
+  console.log("Will redirect to:", thankYouPage);
   
   // Send the form data to Netlify
   fetch("/", {
@@ -560,13 +567,10 @@ function handleFormSubmit(event, language) {
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams(formData).toString()
   })
-  .then(() => {
-    // Redirect to the appropriate thank you page based on language
-    if (language === 'es') {
-      window.location.href = "/gracias.html";
-    } else {
-      window.location.href = "/thanks.html";  
-    }
+  .then(response => {
+    console.log("Form submitted successfully");
+    // Redirect to the appropriate thank you page
+    window.location.href = thankYouPage;
   })
   .catch(error => {
     console.error("Form submission error:", error);
@@ -576,19 +580,12 @@ function handleFormSubmit(event, language) {
 
 // Initialize form handlers when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-  // English form
-  const englishForm = document.querySelector('.contact-form[action="/thanks.html"]');
-  if (englishForm) {
-    englishForm.addEventListener('submit', function(e) {
-      handleFormSubmit(e, 'en');
-    });
-  }
+  // Find all contact forms by class name only
+  const contactForms = document.querySelectorAll('.contact-form');
   
-  // Spanish form
-  const spanishForm = document.querySelector('.contact-form[action="/gracias.html"]');
-  if (spanishForm) {
-    spanishForm.addEventListener('submit', function(e) {
-      handleFormSubmit(e, 'es');
-    });
-  }
+  // Add event listener to each form
+  contactForms.forEach(form => {
+    console.log("Found form:", form);
+    form.addEventListener('submit', handleFormSubmit);
+  });
 });

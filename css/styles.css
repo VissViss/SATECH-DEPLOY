@@ -1159,6 +1159,15 @@ body > footer:last-child {
         margin: 10px 0;
     }
     
+    nav ul li a {
+        /* ...existing styles like font-size, width, padding, display... */
+        /* Add underline styling */
+        text-decoration: underline;
+        text-decoration-thickness: 1px; /* Adjust thickness if needed */
+        text-underline-offset: 6px; /* Increase space between text and underline */
+        /* Ensure any conflicting ::after rule is handled or removed if necessary */
+    }
+
     .dropdown-content {
         position: static;
         box-shadow: none;
@@ -1715,17 +1724,9 @@ body.debug-mode {
         display: block;
     }
     
-    /* Fix nav item underline position and width for mobile */
+    /* Fix nav item underline position */
     nav ul li a::after {
-        bottom: 8px; /* Increase space between text and underline (was 5px) */
-        left: 10%; /* Start the underline at 10% from the left edge */
-        width: 0; /* Start with 0 width before hover */
-    }
-    
-    nav ul li a:hover::after,
-    nav ul li a.active::after {
-        width: 80%; /* Make underline only 80% of text width instead of 100% */
-        left: 10%; /* Keep the underline centered with 10% margin on each side */
+        bottom: 5px;
     }
 }
 
