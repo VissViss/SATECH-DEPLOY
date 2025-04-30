@@ -38,13 +38,13 @@
         right: 0;
     }
     
-    /* CRITICAL FIX: Make nav ul a column layout */
+    /* CRITICAL FIX: Make nav ul a column layout with reduced top gap */
     nav ul {
         flex-direction: column;
         width: 100%;
         height: auto;
         align-items: flex-start;
-        margin-top: 20px;
+        margin-top: 0; /* Reduced from 20px to eliminate the gap */
     }
     
     /* Hamburger menu item spacing reduction */
