@@ -298,6 +298,16 @@ nav ul li a.active::after {
     width: 100%;
 }
 
+/* Custom styling for dropdown links */
+.dropdown > a::after {
+    bottom: 5px; /* Move further from the image */
+}
+
+.dropdown > a:hover::after,
+.dropdown > a.active::after {
+    width: 60%; /* Make underline narrower than the full width */
+}
+
 .dropdown {
     position: relative;
     height: 100%;
