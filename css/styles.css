@@ -1169,21 +1169,22 @@ body > footer:last-child {
     /* Ensure no text-decoration properties are here */
 
     /* Fix nav item underline position and width for mobile */
-    nav ul li a::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: 8px; /* Increased space between text and underline (adjust value as needed) */
-        left: 10%; /* Start the underline at 10% from the left edge */
-        width: 0; /* Start with 0 width before hover/active */
-    }
-    
-    nav ul li a:hover::after,
-    nav ul li a.active::after {
-        width: 80%; /* Make underline only 80% of text width */
-        left: 10%; /* Keep the underline centered (10% margin on each side) */
-    }
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    bottom: 12px; /* Increased space between text and underline (moved from 8px to 12px) */
+    left: 15%; /* Start the underline at 15% from the left edge (changed from 10%) */
+    width: 0; /* Start with 0 width before hover/active */
+    background: var(--primary-color);
+    transition: var(--transition);
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 70%; /* Make underline narrower (changed from 80% to 70%) */
+    left: 15%; /* Keep the underline centered (changed from 10% to 15%) */
+}
 
     .dropdown-content {
         position: static;
