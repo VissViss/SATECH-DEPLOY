@@ -546,3 +546,49 @@ function initContentAnimations() {
         });
     });
 }
+
+// Form submission handler with custom redirect
+function handleFormSubmit(event, language) {
+  event.preventDefault();
+  
+  const form = event.target;
+  const formData = new FormData(form);
+  
+  // Send the form data to Netlify
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString()
+  })
+  .then(() => {
+    // Redirect to the appropriate thank you page based on language
+    if (language === 'es') {
+      window.location.href = "/gracias.html";
+    } else {
+      window.location.href = "/thanks.html";  
+    }
+  })
+  .catch(error => {
+    console.error("Form submission error:", error);
+    alert("There was an error submitting the form. Please try again.");
+  });
+}
+
+// Initialize form handlers when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // English form
+  const englishForm = document.querySelector('.contact-form[action="/thanks.html"]');
+  if (englishForm) {
+    englishForm.addEventListener('submit', function(e) {
+      handleFormSubmit(e, 'en');
+    });
+  }
+  
+  // Spanish form
+  const spanishForm = document.querySelector('.contact-form[action="/gracias.html"]');
+  if (spanishForm) {
+    spanishForm.addEventListener('submit', function(e) {
+      handleFormSubmit(e, 'es');
+    });
+  }
+});
