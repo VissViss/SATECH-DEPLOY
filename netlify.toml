@@ -116,16 +116,46 @@
   status = 200
   conditions = {Language = ["en-*"]}
 
-# Thank you page redirects
+# Form handling redirects
+[[redirects]]
+  from = "/success"
+  to = "/thanks.html"
+  status = 302
+  force = true
+  conditions = {Language = ["en-*"]}
+
+[[redirects]]
+  from = "/success"
+  to = "/gracias.html"
+  status = 302
+  force = true
+  conditions = {Language = ["es"]}
+
+# Handle /gracias and /thanks paths without .html extension
 [[redirects]]
   from = "/gracias"
   to = "/gracias.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/thanks"
   to = "/thanks.html"
   status = 200
+  force = true
+
+# Form-specific success redirects
+[[redirects]]
+  from = "/gracias?success=true"
+  to = "/gracias.html"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/thanks?success=true"
+  to = "/thanks.html"
+  status = 302
+  force = true
 
 # External redirects (social media)
 [[redirects]]
