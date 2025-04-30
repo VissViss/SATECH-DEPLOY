@@ -328,11 +328,12 @@
                       </div>
                     </div>
                   </div>
-                  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form" action="thanks.html" data-netlify-success-url="thanks.html">
+                  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form" action="/thanks.html" netlify>
                     <input type="hidden" name="form-name" value="contact">
                     <input type="hidden" name="subject" value="Message from website">
                     <input type="hidden" name="to" value="info@satech.co">
-                    <input type="hidden" name="success_url" value="thanks.html">
+                    <input type="hidden" name="success_url" value="/thanks.html">
+                    <input type="hidden" name="netlify-success-url" value="/thanks.html">
                     <div class="honeypot-field">
                         <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                     </div>
