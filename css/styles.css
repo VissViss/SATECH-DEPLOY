@@ -299,12 +299,12 @@ nav ul li a.active::after {
 }
 
 /* Custom styling for dropdown links */
-.dropdown > a::after {
+header nav ul li.dropdown > a::after {
     bottom: 5px; /* Move further from the image */
 }
 
-.dropdown > a:hover::after,
-.dropdown > a.active::after {
+header nav ul li.dropdown > a:hover::after,
+header nav ul li.dropdown > a.active::after {
     width: 60%; /* Make underline narrower than the full width */
 }
 
