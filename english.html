@@ -508,6 +508,50 @@
         });
     </script>
 
+<!-- Form submission JavaScript -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Find all Netlify forms on the page
+    const netlifyForms = document.querySelectorAll('form[data-netlify="true"]');
+    
+    // Add custom submission handler to each form
+    netlifyForms.forEach(form => {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent default form submission
+        
+        // Get the form data
+        const formData = new FormData(form);
+        
+        // Submit the form data via fetch API
+        fetch('/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          body: new URLSearchParams(formData).toString()
+        })
+        .then(response => {
+          if (response.ok) {
+            // On successful submission, redirect to thank you page based on language
+            const userLang = navigator.language || navigator.userLanguage;
+            if (userLang.startsWith('es')) {
+              window.location.href = '/gracias.html';
+            } else {
+              window.location.href = '/thanks.html';
+            }
+          } else {
+            throw new Error('Form submission failed');
+          }
+        })
+        .catch(error => {
+          console.error('Error submitting form:', error);
+          alert('Sorry, there was a problem submitting your form. Please try again.');
+        });
+      });
+    });
+  });
+</script>
+
 <!-- CSS Diagnostic Tool (development only) -->
 <!-- <script src="js/dev-tools/css-diagnostic.js"></script> -->
 
