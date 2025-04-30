@@ -1,3 +1,8 @@
+/* =============================================================================
+   MOBILE STYLES - CONSOLIDATED
+   Includes fixes from both original styles-fix.css and former inline styles
+   The inline styles take priority when there are conflicts
+   =============================================================================*/
 @media (max-width: 768px) {
     /* Hamburger menu item spacing reduction */
     nav ul li {
@@ -91,6 +96,203 @@
         margin: 0 5px;
         font-size: 1rem;
     }
+    
+    /* =========== HAMBURGER ANIMATION STYLES (FORMERLY INLINE) =========== */
+    /* These take priority as they fixed the original issue */
+    .hamburger span {
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+    
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+    
+    /* Navigation transition fix - Critical fix from inline styles */
+    nav {
+        transition: right 0.3s ease-in-out;
+    }
+    
+    /* Mobile navigation underline styles - completely disabled for mobile */
+    nav ul li a::after,
+    nav ul li a:hover::after,
+    nav ul li a.active::after {
+        display: none; /* Hide all underlines completely */
+    }
+    
+    /* =============================================================================
+       REFERENCE STYLES FROM STYLES.CSS (COMMENTED OUT FOR REFERENCE)
+       These styles were in styles.css but have been consolidated here
+       =============================================================================*/
+    
+    /* 
+    // Original hamburger button styling from styles.css
+    .hamburger {
+        display: block;
+        z-index: 1001;
+        padding: 10px;
+        margin: -10px;
+    }
+    
+    // Original nav panel styling from styles.css
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 60%;
+        height: 100vh;
+        background: rgba(40, 40, 40, 0.95);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: center;
+        padding: 50px;
+        transition: var(--transition);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+    
+    // Original nav panel active state from styles.css
+    nav.active {
+        right: 0;
+    }
+    
+    // Original nav list styling from styles.css
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    // Original nav list items from styles.css
+    nav ul li {
+        margin: 10px 0;
+    }
+    
+    // Original nav links from styles.css
+    nav ul li a {
+        font-size: 0.95rem;
+        width: 100%;
+        padding: 10px 0;
+        display: block;
+    }
+    
+    // Original mobile underline positioning from styles.css (was commented out)
+    // nav ul li a::after {
+    //    content: '';
+    //    position: absolute;
+    //    height: 2px;
+    //    bottom: 12px; 
+    //    left: 15%; 
+    //    width: 0; 
+    //    background: var(--primary-color);
+    //    transition: var(--transition);
+    // }
+    
+    // Original underline hiding from styles.css
+    nav ul li a::after,
+    nav ul li a:hover::after,
+    nav ul li a.active::after {
+        display: none;
+    }
+    
+    // Original dropdown content styling from styles.css
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        margin-top: 10px;
+        margin-left: 15px;
+        display: none;
+    }
+    
+    // Original dropdown active state from styles.css
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+    
+    // Original hamburger animation from styles.css
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+    
+    // Original hamburger styles from bottom of styles.css
+    .hamburger {
+        cursor: pointer;
+        padding: 15px;
+        margin: -15px;
+        position: relative;
+        z-index: 2000;
+    }
+    
+    .hamburger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: white;
+        margin: 5px 0;
+        border-radius: 3px;
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+    
+    // Additional mobile nav styles from bottom of styles.css
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 60%;
+        height: 100vh;
+        background: rgba(40, 40, 40, 0.95);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 60px 24px 24px;
+        transition: right 0.3s ease-in-out;
+        z-index: 1500;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    nav.active {
+        right: 0;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        align-items: flex-start;
+        margin-top: 20px;
+    }
+    
+    nav ul li {
+        margin: 8px 0;
+        width: 100%;
+        height: auto;
+    }
+    
+    nav ul li a {
+        font-size: 0.95rem;
+        width: 100%;
+        padding: 10px 0;
+        display: block;
+    }
+    */
 }
 
 /* Honeypot field - invisible to humans but still accessible to bots */

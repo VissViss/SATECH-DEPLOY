@@ -87,10 +87,6 @@ html[lang="en"] .bg-image[data-section="contact"] {
     background-image: url('../images/Satech-8.png');
 }
 
-/* Honeypot field for forms */
-.honeypot-field {
-    display: none;
-}
 
 /* Floating particles */
 .floating-particle.p1 {

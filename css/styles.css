@@ -1122,21 +1122,27 @@ body > footer:last-child {
         flex-direction: column;
     }
     
+    /* KEEP ACTIVE: Only the hamburger display property should remain active */
     .hamburger {
         display: block;
-        z-index: 1001; /* Increased z-index to be above header */
-        padding: 10px; /* Add padding to increase clickable area */
-        margin: -10px; /* Counteract padding to keep visual position */
+    }
+    
+    /* === BEGIN COMMENT: Mobile navigation styles now in styles-fix.css === */
+    /*
+    .hamburger {
+        z-index: 1001;
+        padding: 10px;
+        margin: -10px;
     }
     
     nav {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 60%; /* Reduced from 80% for a smaller menu */
+        width: 60%;
         height: 100vh;
         background: rgba(40, 40, 40, 0.95);
-        -webkit-backdrop-filter: blur(10px); /* Safari, iOS support */
+        -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
         flex-direction: column;
         justify-content: center;
@@ -1159,42 +1165,26 @@ body > footer:last-child {
         margin: 10px 0;
     }
     
-   nav ul li a {
-    font-size: 0.95rem;
-    width: 100%;
-    padding: 10px 0;
-    display: block;
-}
+    nav ul li a {
+        font-size: 0.95rem;
+        width: 100%;
+        padding: 10px 0;
+        display: block;
+    }
 
-/* Fix nav item underline position and width for mobile */
-/* Temporarily disabled to test navigation highlighting without underlines */
-/* 
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    height: 2px;
-    bottom: 12px; 
-    left: 15%; 
-    width: 0; 
-    background: var(--primary-color);
-    transition: var(--transition);
-}
-*/
+    nav ul li a::after,
+    nav ul li a:hover::after,
+    nav ul li a.active::after {
+        display: none;
+    }
 
-/* Hide all underlines in mobile navigation mode */
-nav ul li a::after,
-nav ul li a:hover::after,
-nav ul li a.active::after {
-    display: none; /* Hide all underlines completely */
-}
-
-.dropdown-content {
-    position: static;
-    box-shadow: none;
-    margin-top: 10px;
-    margin-left: 15px;
-    display: none;
-}
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        margin-top: 10px;
+        margin-left: 15px;
+        display: none;
+    }
     
     .dropdown.active .dropdown-content {
         display: block;
@@ -1211,6 +1201,8 @@ nav ul li a.active::after {
     .hamburger.active span:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
     }
+    */
+    /* === END COMMENT === */
     
     .title-header-view {
         font-size: 1.8rem;
@@ -1251,24 +1243,7 @@ nav ul li a.active::after {
         margin-top: 45px;
     }
     
-    .footer-content {
-        flex-direction: row; /* Changed from column to row for better layout with no logo */
-        align-items: center;
-        justify-content: center; /* Ensure center alignment */
-        height: 100%;
-        width: 100%; /* Ensure full width */
-    }
-    
-    footer p {
-        text-align: center; /* Ensure text is centered */
-        margin: 0 auto; /* Center the paragraph */
-        padding: 0; /* Remove any padding */
-    }
-    
-    footer .social-links {
-        margin-left: 15px; /* Add some spacing between text and social icons */
-        margin-top: 0; /* Remove top margin */
-    }
+  
     
     .contact-row {
         flex-direction: column;
@@ -1662,7 +1637,8 @@ body.debug-mode {
    Context: Ensuring mobile menu works correctly
    =============================================================================*/
 
-/* Increase clickable area for hamburger button */
+/* Basic hamburger button styling (core styling remains in styles.css) */
+/* Mobile-specific transformations come from styles-fix.css */
 .hamburger {
     cursor: pointer;
     padding: 15px;
@@ -1682,30 +1658,20 @@ body.debug-mode {
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-/* Active state for hamburger (X shape) */
-.hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
-}
 
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-}
 
-.hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
-}
-
-/* Mobile nav panel */
+/* MOVED TO STYLES-FIX.CSS - START */
+/* Mobile navigation panel styles have been moved to styles-fix.css */
+/* 
 @media (max-width: 768px) {
-    /* Fix for mobile nav */
     nav {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 60%; /* Reduced from 80% for a smaller menu */
+        width: 60%;
         height: 100vh;
         background: rgba(40, 40, 40, 0.95);
-        -webkit-backdrop-filter: blur(10px); /* Safari, iOS support */
+        -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
         display: flex;
         flex-direction: column;
@@ -1717,12 +1683,10 @@ body.debug-mode {
         box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
     }
     
-    /* Active state for nav panel */
     nav.active {
         right: 0;
     }
     
-    /* Reconfigure nav list items on mobile */
     nav ul {
         flex-direction: column;
         width: 100%;
@@ -1743,8 +1707,9 @@ body.debug-mode {
         padding: 10px 0;
         display: block;
     }
-    
 }
+*/
+/* MOVED TO STYLES-FIX.CSS - END */
 
 /* =============================================================================
    14. GAP FIX FOR HERO SECTION
