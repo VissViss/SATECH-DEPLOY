@@ -328,9 +328,44 @@
                       </div>
                     </div>
                   </div>
-                  <form name="contact" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
+                  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form" id="contactForm">
                     <input type="hidden" name="form-name" value="contact">
-                    <!-- ...existing code... -->
+                    <input type="hidden" name="netlify-honeypot" value="bot-field">
+                    <input type="hidden" name="success_url" value="/thanks.html">
+                    <!-- New form submission handler - BlackboxAI recommended approach -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const contactForm = document.getElementById('contactForm');
+  
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the default form submission
+      
+      // Get form data
+      const formData = new FormData(this);
+      
+      // Submit the form data using fetch
+      fetch('/', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          // Handle success - redirect to thank you page
+          // The success_url hidden field will handle the redirect
+          window.location.href = formData.get('success_url') || '/thanks.html';
+        } else {
+          throw new Error('Form submission failed');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('There was a problem with your submission. Please try again.');
+      });
+    });
+  }
+});
+</script>
                     <div class="honeypot-field">
                         <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                     </div>
