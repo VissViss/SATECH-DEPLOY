@@ -1,12 +1,3 @@
-<!-- Hidden form for Netlify bot to detect -->
-<form name="contact" netlify netlify-honeypot="bot-field" hidden>
-  <input type="text" name="name" />
-  <input type="email" name="email" />
-  <input type="tel" name="phone" />
-  <select name="reason"></select>
-  <textarea name="message"></textarea>
-</form>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -98,7 +89,14 @@
 </head>
 <body>
 	
-
+    <!-- Hidden form for Netlify bot to detect -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <select name="reason"></select>
+      <textarea name="message"></textarea>
+    </form>
        
     <!-- Header and Navigation -->
     <header>
@@ -337,11 +335,11 @@
                       </div>
                     </div>
                   </div>
-                  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form" action="gracias.html">
+                  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form" action="gracias.html" data-netlify-success-url="gracias.html">
                     <input type="hidden" name="form-name" value="contact">
-                    <input type="hidden" name="subject" value="Mensaje desde sitio web - Deploy ID: 20250429">
+                    <input type="hidden" name="subject" value="Mensaje desde sitio web">
                     <input type="hidden" name="to" value="info@satech.co">
-                    <input type="hidden" name="timestamp" value="deploy-refresh-20250429">
+                    <input type="hidden" name="success_url" value="gracias.html">
                     <div class="honeypot-field">
                         <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                     </div>
