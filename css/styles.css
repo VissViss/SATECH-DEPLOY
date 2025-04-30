@@ -1159,40 +1159,42 @@ body > footer:last-child {
         margin: 10px 0;
     }
     
-    nav ul li a {
-         font-size: 0.95rem;
-        width: 100%;
-        padding: 10px 0;
-        display: block;
-    }
+   nav ul li a {
+    font-size: 0.95rem;
+    width: 100%;
+    padding: 10px 0;
+    display: block;
+}
 
-    /* Ensure no text-decoration properties are here */
-
-    /* Fix nav item underline position and width for mobile */
+/* Fix nav item underline position and width for mobile */
+/* Temporarily disabled to test navigation highlighting without underlines */
+/* 
 nav ul li a::after {
     content: '';
     position: absolute;
     height: 2px;
-    bottom: 12px; /* Increased space between text and underline (moved from 8px to 12px) */
-    left: 15%; /* Start the underline at 15% from the left edge (changed from 10%) */
-    width: 0; /* Start with 0 width before hover/active */
+    bottom: 12px; 
+    left: 15%; 
+    width: 0; 
     background: var(--primary-color);
     transition: var(--transition);
 }
+*/
 
+/* Hide all underlines in mobile navigation mode */
+nav ul li a::after,
 nav ul li a:hover::after,
 nav ul li a.active::after {
-    width: 70%; /* Make underline narrower (changed from 80% to 70%) */
-    left: 15%; /* Keep the underline centered (changed from 10% to 15%) */
+    display: none; /* Hide all underlines completely */
 }
 
-    .dropdown-content {
-        position: static;
-        box-shadow: none;
-        margin-top: 10px;
-        margin-left: 15px;
-        display: none;
-    }
+.dropdown-content {
+    position: static;
+    box-shadow: none;
+    margin-top: 10px;
+    margin-left: 15px;
+    display: none;
+}
     
     .dropdown.active .dropdown-content {
         display: block;
@@ -1742,10 +1744,6 @@ body.debug-mode {
         display: block;
     }
     
-    /* Fix nav item underline position */
-    nav ul li a::after {
-        bottom: 5px;
-    }
 }
 
 /* =============================================================================
