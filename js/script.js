@@ -547,39 +547,3 @@ function initContentAnimations() {
     });
 }
 
-// ===== CONTACT FORM SUBMISSION HANDLER =====
-// Form submission handler with BlackboxAI approach - works on both mobile and desktop
-document.addEventListener('DOMContentLoaded', function() {
-  const contactForm = document.getElementById('contactForm');
-  
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent the default form submission
-      
-      // Get form data
-      const formData = new FormData(this);
-      
-      // Submit the form data using fetch - FIXED to match BlackboxAI recommendation exactly
-      fetch('/', {
-        method: 'POST',
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString()
-      })
-      .then(response => {
-        if (response.ok) {
-          // Handle success - redirect to thank you page
-          window.location.href = formData.get('success_url') || 
-                                (window.location.pathname.includes('english') ? 
-                                 '/thanks.html' : '/gracias.html');
-        } else {
-          throw new Error('Form submission failed');
-        }
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        alert('There was a problem with your submission. Please try again.');
-      });
-    });
-  }
-});
-
