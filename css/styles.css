@@ -298,14 +298,14 @@ nav ul li a.active::after {
     width: 100%;
 }
 
-/* Custom styling for dropdown links */
-header nav ul li.dropdown > a::after {
-    bottom: 5px; /* Move further from the image */
+/* Target specifically the dropdown content links which have the issue */
+.dropdown-content a::after {
+    bottom: 3px; /* Move underline further from flag+text */
 }
 
-header nav ul li.dropdown > a:hover::after,
-header nav ul li.dropdown > a.active::after {
-    width: 60%; /* Make underline narrower than the full width */
+.dropdown-content a:hover::after,
+.dropdown-content a.active::after {
+    width: 45%; /* Make underline narrower for better appearance */
 }
 
 .dropdown {
