@@ -341,9 +341,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
             backToTopButton.classList.add('show');
+            // Also show floating social media buttons with the back-to-top button
+            document.querySelector('.floating-social').classList.add('show');
         } else {
             header.classList.remove('scrolled');
             backToTopButton.classList.remove('show');
+            // Hide floating social media buttons when back at the top
+            document.querySelector('.floating-social').classList.remove('show');
         }
         
         // Always update active navigation links - removed conditional
