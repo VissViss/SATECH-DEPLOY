@@ -294,6 +294,12 @@ nav ul li a::after {
     transition: var(--transition);
 }
 
+/* Right-to-left underline animation for scrolling up */
+nav ul li a.scroll-up::after {
+    left: auto;
+    right: 0;
+}
+
 nav ul li a:hover::after,
 nav ul li a.active::after {
     width: 100%;
@@ -381,7 +387,7 @@ nav ul li a.active::after {
     flex-direction: column;
     align-items: center;
     z-index: 999;
-    opacity: 0; /* Start hidden like back-to-top button */
+opacity: 0; /* Start hidden like back-to-top button */
     transform: translateY(20px); /* Start slightly below final position */
     transition: all 0.3s ease; /* Match back-to-top transition */
 }

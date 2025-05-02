@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const dropdowns = document.querySelectorAll('.dropdown');
     const sections = document.querySelectorAll('.section-card');
     const backToTopButton = document.getElementById('back-to-top');
+    let lastScrollPos = window.scrollY; // Initialize variable to track scroll direction
     
     // HAMBURGER MENU - Mobile Toggle
     if (hamburger && nav) {
@@ -337,8 +338,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // ===== SCROLL EVENT HANDLER =====
     window.addEventListener('scroll', function() {
+        // Track scroll direction
+        const currentScrollPos = window.scrollY;
+        const scrollingDown = currentScrollPos > lastScrollPos;
+        
         // Add or remove scrolled class to header
-        if (window.scrollY > 50) {
+        if (currentScrollPos > 50) {
             header.classList.add('scrolled');
             backToTopButton.classList.add('show');
             // Also show floating social media buttons with the back-to-top button
@@ -351,17 +356,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Always update active navigation links - removed conditional
-        updateActiveNavLink();
+        updateActiveNavLink(scrollingDown);
         updateHomeLink();
+        
+        // Store current scroll position for next comparison
+        lastScrollPos = currentScrollPos;
     });
     
     // ===== ACTIVE NAV LINK UPDATE =====
-    function updateActiveNavLink() {
+    function updateActiveNavLink(scrollingDown) {
         const scrollPosition = window.scrollY + window.innerHeight / 3;
         
-        // First remove active class from all links
+        // First remove active class and scroll direction classes from all links
         navLinks.forEach(link => {
             link.classList.remove('active');
+            link.classList.remove('scroll-up');
         });
         
         // Special handling for home section
@@ -369,6 +378,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const homeLink = document.querySelector('nav ul li a[href="#home"]');
             if (homeLink) {
                 homeLink.classList.add('active');
+                // Add scroll direction class if scrolling up
+                if (!scrollingDown) {
+                    homeLink.classList.add('scroll-up');
+                }
                 return;
             }
         }
@@ -379,6 +392,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const sustainabilityLink = document.querySelector('nav ul li a[href="#sustentabilidad"]');
             if (sustainabilityLink) {
                 sustainabilityLink.classList.add('active');
+                // Add scroll direction class if scrolling up
+                if (!scrollingDown) {
+                    sustainabilityLink.classList.add('scroll-up');
+                }
                 return;
             }
         }
@@ -407,6 +424,10 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (activeLink) {
                 activeLink.classList.add('active');
+                // Add scroll direction class if scrolling up
+                if (!scrollingDown) {
+                    activeLink.classList.add('scroll-up');
+                }
             }
         }
     }
