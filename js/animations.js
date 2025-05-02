@@ -239,13 +239,10 @@ function initHeroSwiper() {
                 // Log image paths to debug
                 slideImages.forEach((img, index) => {
                     console.log(`Slide ${index} image src: ${img.src}`);
-                    // Preload images before swiper initialization
-                    const preloadImg = new Image();
-                    preloadImg.src = img.src;
                 });
                 
                 if (!window.heroSwiper) {
-                    // Add styles for the zoom effect
+                    // Add styles for the zoom effect and slide visibility
                     const style = document.createElement('style');
                     style.textContent = `
                         /* Essential Swiper zoom styles */
@@ -257,6 +254,15 @@ function initHeroSwiper() {
                         .swiper-fade .swiper-slide {
                             transition: opacity 1.5s ease-in-out;
                         }
+                        /* Hide all non-first slides initially */
+                        .swiper-slide:not(:first-child) {
+                            opacity: 0 !important;
+                        }
+                        /* Once Swiper initializes, these classes will override the above */
+                        .swiper-slide-active, 
+                        .swiper-slide-visible {
+                            opacity: 1 !important;
+                        }
                     `;
                     document.head.appendChild(style);
                     
@@ -265,6 +271,7 @@ function initHeroSwiper() {
                         fadeEffect: {
                             crossFade: false
                         },
+                        preloadImages: true, 
                         loop: true,
                         speed: 1500,
                         autoplay: {
@@ -283,6 +290,7 @@ function initHeroSwiper() {
                         observeParents: true,
                         watchSlidesProgress: true,
                         resizeObserver: true,
+                        initialSlide: 0, // Explicitly start with the first slide
                         on: {
                             init: function() {
                                 console.log('Swiper initialized successfully');
@@ -341,7 +349,7 @@ function initHeroSwiper() {
                     if (index > 0) slide.style.display = 'none'; // Only show first slide
                 });
             }
-        }, 500); // Wait 500ms to ensure everything is loaded
+        }, 300); // Reduced from 500ms to 300ms for faster initialization
     } else {
         console.error('ERROR: Swiper is not loaded! Attempting to load it dynamically...');
         

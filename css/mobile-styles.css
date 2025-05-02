@@ -28,7 +28,7 @@
         flex-direction: column;
         justify-content: flex-start; /* Changed from center to top-align content */
         align-items: flex-start;
-        padding: 80px 24px 24px; /* Increased top padding to push menu items down from hamburger */
+        padding: 30px 24px 24px; /* Reduced top padding from 80px to 30px */
         transition: right 0.3s ease-in-out;
         z-index: 1500;
         box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
