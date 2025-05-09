@@ -34,24 +34,15 @@
   [context.staging.environment]
     NODE_ENV = "development"
 
-# Asset optimization
+# Asset optimization - DISABLED BUNDLING AND MINIFICATION TO PREVENT ISSUES
 [build.processing]
-  skip_processing = false
-  
+  skip_processing = true
+
+# Explicitly disable CSS processing
 [build.processing.css]
-  bundle = true
-  minify = true
-
-[build.processing.js]
-  bundle = true
-  minify = true
-
-[build.processing.html]
-  pretty_urls = true
-
-[build.processing.images]
-  compress = true
-
+  bundle = false
+  minify = false
+  
 # Headers
 [[headers]]
   for = "/*"
@@ -61,28 +52,6 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Content-Security-Policy = "default-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.googleapis.com https://fonts.gstatic.com https://maps.app.goo.gl https://bsky.app; img-src 'self' data: https://raw.githubusercontent.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; connect-src 'self'; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; form-action 'self';"
-
-# Cache long-lived assets
-[[headers]]
-  for = "/images/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/css/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/js/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-# HTML files should have a shorter cache
-[[headers]]
-  for = "/*.html"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
 
 # Custom redirects
 [[redirects]]
