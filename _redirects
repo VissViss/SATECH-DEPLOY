@@ -15,6 +15,7 @@ http://satech.co/* https://satech.co/:splat 301!
 /whatsapp https://wa.me/573153977544 302
 /instagram https://www.instagram.com/satech.co 302
 /linkedin https://www.linkedin.com/company/satech-s-a-s-/ 302
+/bluesky https://bsky.app/profile/satech.bsky.social 302
 
 # Default 404 handling
 /* /404.html 404
