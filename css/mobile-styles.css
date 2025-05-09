@@ -139,6 +139,28 @@
     footer .social-links a {
         margin: 0 5px;
         font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Mobile BlueSky Icon Fixes */
+    /* BlueSky icon size and positioning for floating social links */
+    .floating-social .bsky-icon-bg {
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        background-position: center;
+        background-size: contain;
+    }
+    
+    /* BlueSky icon size and positioning for footer */
+    .social-links .bsky-icon-bg {
+        width: 18px;
+        height: 18px;
+        position: relative;
+        top: 3px; /* Slightly adjusted for better alignment on mobile */
+        vertical-align: middle;
     }
     
     /* =========== HAMBURGER ANIMATION STYLES (FORMERLY INLINE) =========== */
