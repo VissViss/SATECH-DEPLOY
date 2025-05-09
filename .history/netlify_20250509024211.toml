@@ -60,7 +60,7 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Content-Security-Policy = "default-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.googleapis.com https://fonts.gstatic.com https://maps.app.goo.gl https://bsky.app; img-src 'self' data: https://raw.githubusercontent.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; connect-src 'self'; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; form-action 'self'; svg-src 'self' http://www.w3.org/2000/svg;"
+    Content-Security-Policy = "default-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.googleapis.com https://fonts.gstatic.com https://maps.app.goo.gl; img-src 'self' data: https://raw.githubusercontent.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; connect-src 'self'; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; form-action 'self';"
 
 # Cache long-lived assets
 [[headers]]
@@ -203,14 +203,13 @@
   status = 302
 
 [[redirects]]
-  from = "/email"
-  to = "mailto:info@satech.co"
-  status = 302
-
-# BlueSky redirect
-[[redirects]]
   from = "/bluesky"
   to = "https://bsky.app/profile/satech.bsky.social"
+  status = 302
+
+[[redirects]]
+  from = "/email"
+  to = "mailto:info@satech.co"
   status = 302
 
 # Default 404 handling

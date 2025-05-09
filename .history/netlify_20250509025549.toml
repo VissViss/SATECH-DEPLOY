@@ -207,9 +207,24 @@
   to = "mailto:info@satech.co"
   status = 302
 
-# BlueSky redirect
+# BlueSky redirects - handle all variations
 [[redirects]]
   from = "/bluesky"
+  to = "https://bsky.app/profile/satech.bsky.social"
+  status = 302
+
+[[redirects]]
+  from = "/bluesky."
+  to = "https://bsky.app/profile/satech.bsky.social"
+  status = 302
+
+[[redirects]]
+  from = "/bluesky/"
+  to = "https://bsky.app/profile/satech.bsky.social"
+  status = 302
+
+[[redirects]]
+  from = "/bluesky/*"
   to = "https://bsky.app/profile/satech.bsky.social"
   status = 302
 
