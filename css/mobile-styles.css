@@ -110,15 +110,16 @@
         padding: 8px 15px;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
+  
     
-    /* Footer spacing fix */
     .footer-content {
         flex-direction: row;
         align-items: center;
-        justify-content: center;
+        justify-content: center; /* Center everything horizontally */
         height: 100%;
         width: 100%;
-        gap: 5px;
+        gap: 5px; /* Restored original gap */
+        padding: 0 !important; /* Ensure no padding */
     }
     
     footer p {
@@ -126,22 +127,30 @@
         margin: 0;
         padding: 0;
         line-height: 50px;
+        font-size: 0.9rem; /* Increased from 0.7rem to be more readable */
+        white-space: nowrap; /* Prevent text wrapping */
+    }
+    
+    footer .container {
+        display: flex;
+        align-items: center; /* Center vertically */
+        justify-content: center; /* Center horizontally */
+        width: 100%;
     }
     
     footer .social-links {
-        margin-left: 5px;
+        margin-left: 0px; /* Restored original margin */
         margin-top: 0;
+        margin-right: 0;
+        padding: 0;
         display: flex;
         align-items: center;
+        justify-content: center; /* Center the social icons */
         height: 50px;
     }
     
     footer .social-links a {
-        margin: 0 5px;
-        font-size: 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        margin: 0 6px; /* Restored original margins between icons */
     }
     
     /* Mobile BlueSky Icon Fixes */
@@ -156,10 +165,10 @@
     
     /* BlueSky icon size and positioning for footer */
     .social-links .bsky-icon-bg {
-        width: 18px;
-        height: 18px;
+        width: 18px; /* Restored original value */
+        height: 18px; /* Restored original value */
         position: relative;
-        top: 3px; /* Slightly adjusted for better alignment on mobile */
+        top: -2px; /* Restored original value */
         vertical-align: middle;
     }
     
@@ -191,6 +200,24 @@
     nav ul li a:hover::after,
     nav ul li a.active::after {
         display: none; /* Hide all underlines completely */
+    }
+    
+    /* FIX: Make back-to-top and floating social buttons consistent with higher specificity */
+    body #back-to-top {
+        bottom: 60px !important; /* Set higher to avoid footer overlap */
+        right: 20px !important;
+    }
+    
+    .floating-social {
+        bottom: 50px !important; /* Match back-to-top height */
+        left: 20px !important;
+        flex-direction: column;
+    }
+    
+    /* Ensure footer content is centered on mobile */
+    footer .footer-content {
+        justify-content: center !important;
+        gap: 5px;
     }
     
     /* =============================================================================
