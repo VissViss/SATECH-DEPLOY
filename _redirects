@@ -3,9 +3,16 @@ https://www.satech.co/* https://satech.co/:splat 301!
 http://www.satech.co/* https://satech.co/:splat 301!
 http://satech.co/* https://satech.co/:splat 301!
 
+# Redirect satechcolombia.com domain to satech.co
+https://satechcolombia.com/* https://satech.co/:splat 301!
+https://www.satechcolombia.com/* https://satech.co/:splat 301!
+http://satechcolombia.com/* https://satech.co/:splat 301!
+http://www.satechcolombia.com/* https://satech.co/:splat 301!
+
 # Language-based redirects
 /   /index.html   200   Language=es
 /   /english.html   200   Language=en-*
+/   /english.html   200   Language=en
 
 # Thank you page redirects
 /gracias /gracias.html 200
@@ -16,6 +23,12 @@ http://satech.co/* https://satech.co/:splat 301!
 /instagram https://www.instagram.com/satech.co 302
 /linkedin https://www.linkedin.com/company/satech-s-a-s-/ 302
 /bluesky https://bsky.app/profile/satech.bsky.social 302
+
+# Prevent direct access to HTML files (optional security measure)
+# /*.html /404.html 404
+
+# Maintenance mode redirect (commented out until needed)
+# /* /maintenance.html 503
 
 # Default 404 handling
 /* /404.html 404
